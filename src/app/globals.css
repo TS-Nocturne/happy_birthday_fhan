@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- สี ---- */
+  --color-pink-base: #FFD6E8;
+  --color-pink-soft: #FFE9F2;
+  --color-pink-deep: #F7A8C4;
+  --color-rose:      #E8557C;
+  --color-plum:      #6B2B3F;
+  --color-cream:     #FFFCF7;
+  --color-ink:       #3E2430;
+  --color-muted:     #8A5A6C;
+
+  /* ---- ฟอนต์ ---- */
+  --font-hand:      var(--font-gaegu);
+  --font-script:    var(--font-caveat);
+  --font-serif-it:  var(--font-playfair);
+
+  /* ---- เงาแบบ sticker ---- */
+  --shadow-pop:  4px 4px 0 var(--color-plum);
+  --shadow-pop-lg: 12px 12px 0 rgb(107 43 63 / 0.25);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-hand), cursive, sans-serif;
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    background:
+      repeating-linear-gradient(0deg,  rgb(255 255 255 / .5) 0 1px, transparent 1px 26px),
+      repeating-linear-gradient(90deg, rgb(255 255 255 / .5) 0 1px, transparent 1px 26px),
+      radial-gradient(circle at 20% 10%, var(--color-pink-soft) 0%, var(--color-pink-base) 55%, #FFC2DC 100%);
+    background-attachment: fixed;
+  }
+}
+
+@utility grid-paper {
+  background-image:
+    repeating-linear-gradient(0deg,  rgb(247 168 196 / .18) 0 1px, transparent 1px 24px),
+    repeating-linear-gradient(90deg, rgb(247 168 196 / .18) 0 1px, transparent 1px 24px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
