@@ -3,10 +3,8 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Happy Birthday Fhan 💌',
-  description: 'การ์ดวันเกิดสุดพิเศษที่ทำด้วยใจสำหรับเธอ~',
   openGraph: {
     title: 'Happy Birthday Fhan 💌',
-    description: 'เปิดของขวัญและคำอวยพรของคุณสิ~',
     type: 'website',
   },
 };
