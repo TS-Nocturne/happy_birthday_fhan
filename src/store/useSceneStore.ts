@@ -6,13 +6,11 @@ import { SCENE_ORDER, type SceneId } from '@/types';
 interface SceneState {
   scene: SceneId;
   direction: 1 | -1;
-  chosenGift: string | null;
   giftPick: number | null;
   soundOn: boolean;
   go: (scene: SceneId) => void;
   next: () => void;
   prev: () => void;
-  setGift: (id: string) => void;
   setGiftPick: (i: number) => void;
   toggleSound: () => void;
   reset: () => void;
@@ -21,7 +19,6 @@ interface SceneState {
 export const useSceneStore = create<SceneState>((set, get) => ({
   scene: 'cake',
   direction: 1,
-  chosenGift: null,
   giftPick: null,
   soundOn: false,
 
@@ -43,13 +40,10 @@ export const useSceneStore = create<SceneState>((set, get) => ({
     if (i > 0) set({ scene: SCENE_ORDER[i - 1], direction: -1 });
   },
 
-  setGift: (chosenGift) => set({ chosenGift }),
   setGiftPick: (giftPick) => set({ giftPick }),
   toggleSound: () => set((s) => ({ soundOn: !s.soundOn })),
-  reset: () => set({ scene: 'cake', direction: 1, chosenGift: null, giftPick: null }),
+  reset: () => set({ scene: 'cake', direction: 1, giftPick: null }),
 }));
 
-/** selector helpers for re-renders */
 export const useSceneIndex = () =>
   useSceneStore((s) => SCENE_ORDER.indexOf(s.scene));
-export const useSceneTotal = () => SCENE_ORDER.length;

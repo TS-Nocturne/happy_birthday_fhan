@@ -1,79 +1,52 @@
-import type { Gift } from '@/types';
-
 export const content = {
-  name: 'มายด์',
-  title: 'Happy Birthday 💖',
-  cakeSub: 'make a wish... แล้วเป่าเทียนกันเถอะ 🎂',
-  blowHint: 'แตะที่เทียนหรือเป่าลมใส่ไมค์เพื่อดับเทียน ✨',
-  cakeDone: 'สุขสันต์วันเกิดนะ! ขอให้ทุกความปรารถนาเป็นจริง 🎉',
-
   accept: {
-    title: 'มีของขวัญพิเศษจะมอบให้... 🎁',
-    sub: 'อยากรับไว้ไหมคะ?',
-    yesBtn: 'รับสิคะ! 💕',
-    noBtn: 'ไม่เอาหรอก 😜',
+    title: 'มีของขวัญวันเกิดมาส่งงง',
+    sub: 'อยากได้มั้ยคั้บบ',
+    yesBtn: 'อยาก',
+    noBtn: 'ไม่อยาก',
     noTrolls: [
-      'ไม่เอาจริงเหรอ? 🥺',
-      'กด YES เถอะนะ~ 💕',
-      'หนีไปไหนไม่ได้หรอก! 😆',
-      'ใจร้ายจังเลย 😭',
-      'ลองกดใหม่อีกทีสิ 💖',
+      'แน่ใจน้าา',
+      'จะไม่อยากได้จริงๆหรออ',
+      'เตรียมมาให้เลยนะะ',
+      'เอาไปเถอะน้าา',
     ],
   },
 
-  letter: `ถึงคนพิเศษของเรา 🎂
+  letter: `สุขสันต์วันเกิดนะค้าบ
 
-ขอให้วันเกิดปีนี้เต็มไปด้วยรอยยิ้ม
-สุขภาพแข็งแรง สมหวังทุกอย่างที่ตั้งใจ
-และมีเราอยู่ข้าง ๆ คอยซัพพอร์ตเธอนะ
+อายุ 16 แล้วน้าา เล่นจุดพักใจได้ละะ
 
-ขอบคุณที่เป็นความสุขให้กันเสมอ
-รักนะ ❤️`,
+ขอให้ปีนี้เป็นปีที่ดี ทำอะไรก็ประสบความสำเร็จไปทุกอย่าง มีเงินเยอะๆ 
+เจอแต่คนที่น่ารักเข้ามาในชีวิตน้าา`,
 
   letterScene: {
-    tapHint: 'แตะซองเพื่อเปิดจดหมาย 💌',
-    from: 'จากใจ',
-    signature: 'ตัวเราเอง ✨',
-    next: 'มีของขวัญรออยู่นะ →',
+    tapHint: 'จิ้มที่ซองเพื่อเปิดอ่านเลย 💌',
+    next: 'ไปดูของขวัญกันต่อ →',
   },
 
   gift: {
-    question: 'เลือกกล่องที่ชอบมา 1 ใบ ✨',
-    hint: 'ใบไหนก็ได้~ ข้างในมีเซอร์ไพรส์ 😌',
-    boxes: [
-      { emoji: '🌷', label: 'ดอกไม้ไม่มีวันเหี่ยว', color: 'bg-pink-base' },
-      { emoji: '🎵', label: 'เพลงที่อยากให้ฟัง',   color: 'bg-pink-soft' },
-      { emoji: '📸', label: 'ความทรงจำของเรา',     color: 'bg-cream' },
-    ],
-    reveal: 'เลือกใบไหน... ก็ได้ความรักทั้งหมดนั่นแหละ 💝',
-    next: 'ไปรับช่อดอกไม้กัน →',
+    letter: {
+      heading: 'Happy Birthday',
+      body: 'เอาไปใช้น้าา',
+      signOff: '',
+      cta: 'รับของขวัญ 🧧',
+      link: process.env.NEXT_PUBLIC_TRUEMONEY_GIFT_URL ?? '',
+      note: 'กดแล้วจะเปิดแอป TrueMoney ให้เลย',
+    },
   },
-
-  flower: {
-    title: 'ช่อดอกไม้สำหรับเธอ 💐',
-    sub: 'เปรียบเหมือนความสดใสที่เธอมีให้เสมอ',
-    note: 'จัดช่อนี้ขึ้นมาด้วยใจ มอบให้เธอคนเดียวเลยนะ 💕',
-    next: 'ฟังเพลง & ดูภาพทรงจำกัน →',
-  },
-
-  song: { title: 'My Love Mine All Mine', src: '/audio/song.mp3' },
-
-  photos: [
-    { src: '/photos/photo1.jpg', caption: 'our favorite day 🌸' },
-    { src: '/photos/photo2.jpg', caption: 'always smiling with you ✨' },
-    { src: '/photos/photo3.jpg', caption: 'my person ❤️' },
-    { src: '/photos/photo4.jpg', caption: 'forever and always 🎀' },
-  ],
 
   finale: {
-    title: 'Happy Birthday Mind! 🎉',
-    sub: 'ขอบคุณที่เดินเดินทางร่วมกันมา ขอให้เป็นปีที่น่ารักสดใสที่สุดนะ!',
-    replay: 'เริ่มต้นเล่นอีกครั้ง 🔄',
+    title: 'เพลงนี้ให้เธอ 🎵',
+    subtitle: 'กดเข็มลงแล้วฟังไปด้วยกันนะ',
+    closing: 'สุขสันต์วันเกิดครับ 💗',
+    replay: 'ดูอีกรอบ ↺',
+  },
+
+  audio: {
+    mode: 'file' as 'file' | 'spotify' | 'none',
+    file: '/audio/birthday-song.mp3',
+    title: 'บังเอิญพบทานตะวัน(.png)',
+    artist: 'PURPEECH',
+    spotifyUrl: 'https://open.spotify.com/track/5Vsv5o4ibovJhVKhdftHSs?si=7235e7fb77084654',
   },
 } as const;
-
-export const GIFTS: Gift[] = [
-  { id: 'bouquet', emoji: '🌷', label: 'ดอกไม้ไม่มีวันเหี่ยว' },
-  { id: 'music', emoji: '🎵', label: 'เพลงที่อยากให้ฟัง' },
-  { id: 'memories', emoji: '📸', label: 'ความทรงจำของเรา' },
-];

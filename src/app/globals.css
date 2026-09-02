@@ -12,9 +12,9 @@
   --color-muted:     #8A5A6C;
 
   /* ---- ฟอนต์ ---- */
-  --font-hand:      var(--font-gaegu);
-  --font-script:    var(--font-caveat);
-  --font-serif-it:  var(--font-playfair);
+  --font-hand:      "Leelawadee UI", "Tahoma", sans-serif;
+  --font-script:    "Leelawadee UI", "Tahoma", cursive, sans-serif;
+  --font-serif-it:  Georgia, "Times New Roman", serif;
 
   /* ---- เงาแบบ sticker ---- */
   --shadow-pop:  4px 4px 0 var(--color-plum);
