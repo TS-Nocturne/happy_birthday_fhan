@@ -358,7 +358,7 @@ export default function GiftScene() {
                       className="absolute -bottom-2 -left-8 sm:-left-10 z-20"
                     >
                       <span className="inline-block rounded-full border-2 border-plum bg-pink-soft px-3 py-1 font-hand text-base sm:text-lg font-bold text-plum shadow-[3px_3px_0_var(--color-plum)] select-none whitespace-nowrap">
-                        i&apos;m your #1 fhan 🌟
+                        you&apos;re my sunshine ☀️
                       </span>
                     </motion.div>
                   </div>

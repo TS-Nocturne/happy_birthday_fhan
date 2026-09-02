@@ -79,9 +79,15 @@ export default function AcceptScene() {
         <motion.button
           animate={{ x: noPos.x, y: noPos.y }}
           transition={{ type: 'spring', stiffness: 350, damping: 20 }}
-          onPointerEnter={moveNo}
-          onTouchStart={moveNo}
-          onClick={moveNo}
+          onPointerEnter={(event) => {
+            if (event.pointerType === 'mouse') moveNo();
+          }}
+          onPointerDown={(event) => {
+            if (event.pointerType !== 'mouse') moveNo();
+          }}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter' || event.key === ' ') moveNo();
+          }}
           className="rounded-full border-2 border-plum/60 bg-white/80 px-5 py-2.5 font-hand text-lg font-bold text-plum/70 shadow-[2px_2px_0_rgba(107,43,63,0.3)] hover:bg-pink-soft cursor-pointer opacity-75"
         >
           {accept.noBtn}
