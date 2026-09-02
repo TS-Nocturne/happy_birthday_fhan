@@ -35,10 +35,10 @@ export default function Vinyl({
         animate={spinning ? { rotate: 360 } : { rotate: 0 }}
         transition={
           spinning
-            ? { duration: 4, repeat: Infinity, ease: 'linear' }
+            ? { duration: 3.2, repeat: Infinity, ease: 'linear' }
             : { duration: 0.4 }
         }
-        whileHover={{ scale: 1.06, rotate: 4 }}
+        whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.95 }}
         className="absolute inset-0 rounded-full border-[3px] border-plum
                    shadow-[var(--shadow-pop)] focus-visible:outline-2

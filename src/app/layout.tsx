@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Happy Birthday Fan 💌',
+  title: 'Happy Birthday Fhan 💌',
   description: 'การ์ดวันเกิดสุดพิเศษที่ทำด้วยใจสำหรับเธอ~',
   openGraph: {
-    title: 'Happy Birthday Fan 💌',
+    title: 'Happy Birthday Fhan 💌',
     description: 'เปิดของขวัญและคำอวยพรของคุณสิ~',
     type: 'website',
   },
