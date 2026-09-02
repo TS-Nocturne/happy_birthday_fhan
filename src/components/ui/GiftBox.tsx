@@ -61,32 +61,36 @@ export default function GiftBox({ onOpen }: GiftBoxProps) {
           </div>
         )}
       </AnimatePresence>
-      <motion.button
-        type="button"
-        onClick={reveal}
-        aria-expanded={open}
-        aria-controls="gift-message"
-        aria-label={open ? 'กล่องของขวัญถูกเปิดแล้ว' : 'เปิดกล่องของขวัญ'}
-        whileHover={open ? undefined : { scale: 1.05, y: -8 }}
-        whileTap={open ? undefined : { scale: 0.96 }}
-        animate={open ? { scale: 1 } : reduced ? undefined : { y: [0, -7, 0] }}
-        transition={open ? { duration: 0.25 } : { duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-        className="relative z-10 h-60 w-60 cursor-pointer rounded-2xl focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-rose sm:h-72 sm:w-72"
+      <motion.div
+        animate={!open && !reduced ? { y: [0, -7, 0] } : { y: 0 }}
+        transition={{ duration: 1.8, repeat: open || reduced ? 0 : Infinity, ease: 'easeInOut' }}
+        className="relative z-10"
       >
-        <PropImage
-          src={open ? assets.gift.open : assets.gift.closed}
-          alt={open ? 'กล่องของขวัญที่เปิดแล้ว' : 'กล่องของขวัญที่ยังปิดอยู่'}
-          fallback="🎁"
-          sizes="288px"
-          priority
-          className="h-full w-full object-contain drop-shadow-[0_16px_22px_rgba(107,43,63,0.28)]"
-        />
-        {!open && (
-          <span className="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border-2 border-plum bg-rose px-4 py-1.5 font-hand text-lg font-bold text-white shadow-[3px_3px_0_var(--color-plum)]">
-            แตะเพื่อเปิด 🎀
-          </span>
-        )}
-      </motion.button>
+        <motion.button
+          type="button"
+          onClick={reveal}
+          aria-expanded={open}
+          aria-controls="gift-message"
+          aria-label={open ? 'กล่องของขวัญถูกเปิดแล้ว' : 'เปิดกล่องของขวัญ'}
+          whileHover={open ? undefined : { scale: 1.05 }}
+          whileTap={open ? undefined : { scale: 0.96 }}
+          className="relative h-60 w-60 cursor-pointer rounded-2xl focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-rose sm:h-72 sm:w-72"
+        >
+          <PropImage
+            src={open ? assets.gift.open : assets.gift.closed}
+            alt={open ? 'กล่องของขวัญที่เปิดแล้ว' : 'กล่องของขวัญที่ยังปิดอยู่'}
+            fallback="🎁"
+            sizes="288px"
+            priority
+            className="h-full w-full object-contain drop-shadow-[0_16px_22px_rgba(107,43,63,0.28)]"
+          />
+          {!open && (
+            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border-2 border-plum bg-rose px-4 py-1.5 font-hand text-lg font-bold text-white shadow-[3px_3px_0_var(--color-plum)]">
+              แตะเพื่อเปิด 🎀
+            </span>
+          )}
+        </motion.button>
+      </motion.div>
 
       <AnimatePresence initial={false}>
         {open && (
