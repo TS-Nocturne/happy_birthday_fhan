@@ -32,18 +32,21 @@ export default function Vinyl({
         disabled={disabled}
         aria-label={disabled ? 'ยังไม่มีเพลงให้เล่น' : playing ? 'หยุดเพลง' : 'เล่นเพลง'}
         aria-pressed={disabled ? undefined : playing}
-        animate={spinning ? { rotate: 360 } : { rotate: 0 }}
-        transition={
-          spinning
-            ? { duration: 3.2, repeat: Infinity, ease: 'linear' }
-            : { duration: 0.4 }
-        }
         whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.95 }}
-        className="absolute inset-0 rounded-full border-[3px] border-plum
-                   shadow-[var(--shadow-pop)] focus-visible:outline-2
+        className="absolute inset-0 rounded-full focus-visible:outline-2
                    focus-visible:outline-offset-4 focus-visible:outline-rose cursor-pointer transition-transform
                    disabled:cursor-not-allowed disabled:opacity-70"
+      >
+        <motion.span
+          aria-hidden="true"
+          animate={spinning ? { rotate: 360 } : { rotate: 0 }}
+          transition={
+            spinning
+              ? { duration: 3.2, repeat: Infinity, ease: 'linear' }
+              : { duration: 0.35, ease: 'easeOut' }
+          }
+          className="absolute inset-0 block rounded-full border-[3px] border-plum shadow-[var(--shadow-pop)]"
         style={{
           background:
             'repeating-radial-gradient(circle at 50% 50%, #2B1A22 0 4px, #3D2530 4px 8px)',
@@ -66,6 +69,7 @@ export default function Vinyl({
           className="absolute left-1/2 top-1/2 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2
                      rounded-full border-2 border-plum bg-cream"
         />
+        </motion.span>
       </motion.button>
 
       <motion.div
